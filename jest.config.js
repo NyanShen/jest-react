@@ -6,7 +6,7 @@ module.exports = {
     "setupFiles": [
       "react-app-polyfill/jsdom"
     ],
-    "setupFilesAfterEnv": [],
+    "setupFilesAfterEnv": ["<rootDir>/config/enzyme/setup-enzyme.js", "./node_modules/jest-enzyme/lib/index.js"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
