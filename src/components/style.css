@@ -43,6 +43,7 @@ body {
     font-size: 12px;
     text-align: center;
     background: #E6E6EA;
+    border-radius: 50%;
 }
 .undo-list-content {
     list-style-type: none;
@@ -68,4 +69,13 @@ body {
     text-indent: 0;
     text-align: center;
     border-radius: 50%;
+}
+.undo-list-input {
+    position: relative;
+    width: 300px;
+    top: -1px;
+    outline: none;
+    line-height: 22px;
+    text-indent: 10px;
+    border-radius: 3px;
 }
