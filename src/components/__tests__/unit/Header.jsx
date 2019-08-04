@@ -54,3 +54,19 @@ it("Header input 输入框，回车时，有内容，函数应该被调用", () 
     expect(fn).toHaveBeenCalled();
     expect(fn).toHaveBeenLastCalledWith("jest react"); // 最后的参数
 })
+
+it("Header input 输入框，回车时，有内容，内容应该被清除", () => {
+    const fn = jest.fn();
+    const wrapper = shallow(<Header addUndoItem={fn}/>);
+    const inputElem = wrapper.find("[data-test='input']");
+    // 准备数据
+    wrapper.setState({value: "jest react add one"})
+    /**
+     * 设置keyUp的keyCode模拟回车
+     */
+    inputElem.simulate("keyUp", {
+        keyCode: 13
+    })
+    const newInputElem = wrapper.find("[data-test='input']");
+    expect(newInputElem.prop("value")).toBe("");
+})
