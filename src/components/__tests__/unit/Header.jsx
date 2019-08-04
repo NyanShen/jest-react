@@ -1,6 +1,7 @@
 import React from "react";
 import {shallow} from "enzyme";
 import Header from "../../Header";
+import {findTestWrapper} from "../../../common/util/testUtils"
 
 it("Header 样式渲染正常", () => {
     const wrapper = shallow(<Header />);
@@ -9,7 +10,7 @@ it("Header 样式渲染正常", () => {
 
 it("Header 组件包含一个 input 输入框", () => {
     const wrapper = shallow(<Header />);
-    const inputElem = wrapper.find("[data-test='input']");
+    const inputElem = findTestWrapper(wrapper, "input");
     expect(inputElem.length).toBe(1);
 })
 
